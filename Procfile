@@ -1,1 +1,1 @@
-web: python code.py ENV["$PORT"]
+web: python code.py $PORT
