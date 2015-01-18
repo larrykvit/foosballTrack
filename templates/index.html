@@ -1,0 +1,38 @@
+$def with (form, rank_list)
+<pre>
+    ______                 __          ____   ____              __   _                 
+   / ____/___  ____  _____/ /_  ____ _/ / /  / __ \____ _____  / /__(_)___  ____ ______
+  / /_  / __ \/ __ \/ ___/ __ \/ __ `/ / /  / /_/ / __ `/ __ \/ //_/ / __ \/ __ `/ ___/
+ / __/ / /_/ / /_/ (__  ) /_/ / /_/ / / /  / _, _/ /_/ / / / / ,< / / / / / /_/ (__  ) 
+/_/    \____/\____/____/_.___/\__,_/_/_/  /_/ |_|\__,_/_/ /_/_/|_/_/_/ /_/\__, /____/  
+                                                                         /____/        
+</pre>
+<br>
+Add the names of the winners and loser in a comma separated fashion
+<form name="main" method="post">
+$if not form.valid: <p class="error">Something wrong...</p>
+
+$:form.render()
+
+
+</form>
+
+
+<hr>
+<table style="width:100%">
+	<tr>
+		<td>RANK</td>
+		<td>NAME</td>
+		<td>&mu;</td>
+		<td>&sigma;</td>
+		<td>GAMES</td>
+		<td>WINS</td>
+		<td>LOSES</td>
+	</tr>
+$for rank in rank_list:
+	<tr class="$loop.parity">
+		<td>$loop.index</td>
+		$for item in rank:
+			<td>$item</td>
+	</tr>
+</table>
