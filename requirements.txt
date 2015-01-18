@@ -1,2 +1,2 @@
 web.py==0.37
-trueskill.py==0.4.37
+trueskill.py==0.4.3
