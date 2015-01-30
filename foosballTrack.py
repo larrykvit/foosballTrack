@@ -4,6 +4,12 @@ import ConfigParser
 rank_file = 'rank.config'
 
 
+def get_player_list():
+    parser = ConfigParser.SafeConfigParser()
+    parser.read(rank_file)
+
+    return parser.sections()
+
 def add_player(name):
     name = name.lower().strip()
     parser = ConfigParser.SafeConfigParser()
